@@ -1,0 +1,66 @@
+/* UserDetails.css */
+
+.user-details-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-image: url('./mm.jpeg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.user-details-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    opacity: 0.9; /* Slight transparency to let background image show through */
+}
+
+.user-details-card h3 {
+    margin-top: 0;
+}
+
+.card-section {
+    margin-bottom: 20px;
+}
+
+.card-section h4 {
+    margin-bottom: 10px;
+}
