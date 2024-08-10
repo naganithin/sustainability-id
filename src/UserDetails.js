@@ -21,9 +21,9 @@ const UserDetails = ({ provider }) => {
                     scope2: data[1].scope2,
                     scope3: data[1].scope3
                 },
-                reporting: {
-                    document1: data[2].document1,
-                    document2: data[2].document2
+                documents: {
+                    report1: `https://sapphire-cautious-crab-180.mypinata.cloud/ipfs/${data[2].document1}`,
+                    report2: `https://sapphire-cautious-crab-180.mypinata.cloud/ipfs/${data[2].document2}`
                 },
                 carbonCredits: {
                     CCBought: ethers.utils.formatUnits(data[3].CCBought, 18), // Adjust decimals as needed
@@ -58,25 +58,26 @@ const UserDetails = ({ provider }) => {
                 <div className="user-details-card">
                     <h3>{userData.name}</h3>
                     <div className="card-section">
-                        <h4>Accounting</h4>
-                        <p>Scope 1: {userData.accounting.scope1}</p>
-                        <p>Scope 2: {userData.accounting.scope2}</p>
-                        <p>Scope 3: {userData.accounting.scope3}</p>
+                        <h4>Emissions</h4>
+                        <p>Scope 1: {userData.accounting.scope1} tCO<sub>2</sub></p>
+                        <p>Scope 2: {userData.accounting.scope2} tCO<sub>2</sub></p>
+                        <p>Scope 3: {userData.accounting.scope3} tCO<sub>2</sub></p>
+
                     </div>
                     <div className="card-section">
-                        <h4>Reporting</h4>
-                        <p>Document 1: {userData.reporting.document1}</p>
-                        <p>Document 2: {userData.reporting.document2}</p>
+                        <h4>Documents</h4>
+                        <p>Report 1: <a href={userData.documents.report1} target="_blank" rel="noopener noreferrer">View Report 1</a></p>
+                        <p>Report 2: <a href={userData.documents.report2} target="_blank" rel="noopener noreferrer">View Report 2</a></p>
                     </div>
                     <div className="card-section">
                         <h4>Carbon Credits</h4>
-                        <p>Bought: {userData.carbonCredits.CCBought}</p>
-                        <p>Retired: {userData.carbonCredits.CCRetired}</p>
+                        <p>Bought: {userData.carbonCredits.CCBought*(10*(10**18))}</p>
+                        <p>Retired: {userData.carbonCredits.CCRetired*(10*(10**18))}</p>
                     </div>
                 </div>
             )}
         </div>
     );
-};
+}; 
 
 export default UserDetails;
